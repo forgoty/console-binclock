@@ -1,2 +1,2 @@
 # console-binclick
-A simple console binary clock.
+A simple console binary clock for UNIX-like OS.
