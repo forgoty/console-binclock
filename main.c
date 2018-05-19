@@ -5,14 +5,14 @@
 
 void getbinary(int num, char *str){
     *(str+6) = '\0';
-    int mask = 0x20 << 1;
+    int mask = 32 << 1;
     while(mask >>= 1)
         *str++ = !!(mask & num) + '0';
 }
 
 
 int main(int argc, char** argv[]){
-    char buff[6];
+    char buff[7];
 
     while (1) {
         time_t t = time(NULL);
@@ -25,9 +25,9 @@ int main(int argc, char** argv[]){
         getbinary(aTm->tm_sec, buff);
         printf(":%s \n", buff);
 
-        sleep (1);//from <unistd.h>
+        sleep (0.1);//from <unistd.h>
         printf("\033c"); //clear screen
     }
-    
+
         return 0;
 }
